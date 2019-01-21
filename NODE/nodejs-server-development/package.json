@@ -1,0 +1,17 @@
+{
+  "name": "web-server",
+  "version": "0.0.1",
+  "description": "demo web server",
+  "main": "index.js",
+  "keywords": [
+    "web",
+    "server"
+  ],
+  "author": "Ivaylo",
+  "license": "MIT",
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}

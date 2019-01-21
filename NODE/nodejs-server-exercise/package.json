@@ -1,0 +1,15 @@
+{
+  "name": "server-train",
+  "version": "1.0.0",
+  "description": "creating-server",
+  "main": "index.js",
+  "keywords": [
+    "server",
+    "train"
+  ],
+  "author": "ivaylo",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.4.3"
+  }
+}

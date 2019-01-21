@@ -1,0 +1,11 @@
+{
+  "name": "train",
+  "version": "0.0.1",
+  "description": "Training course",
+  "main": "index.js",
+  "keywords": [
+    "storage"
+  ],
+  "author": "Ivaylo",
+  "license": "MIT"
+}
