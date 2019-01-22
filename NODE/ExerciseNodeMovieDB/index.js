@@ -5,14 +5,12 @@ let url = require('url');
 let handlers = require('./handlers/index');
 
 http
-    .createServer((req,res) => {
+    .createServer((req, res) => {
         req.path = url.parse(req.url).pathname;
-        
-        for(let handler of handlers){   
-            handler(req,res);
+
+        for (let handler of handlers) {
+            handler(req, res);
         }
-       
-        
     }).listen(port);
 
-    console.log('Working on Server');
+console.log('Working on Server');

@@ -1,15 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-const qs = require('querystring');
 let database = require('../config/dataBase');
+
 
 module.exports = (req, res) => {
     if (req.path.startsWith('/movies/details')) {
         let idMovie = +req.path.split('/')[3];
+    
         for (let movie of database) {
             if (idMovie === movie.id) {
                 fs.readFile(path.join(__dirname, '../views/details.html'), (err, data) => {
-                    if(err){
+                    if (err) {
                         console.log(err);
                         return;
                     }
@@ -24,29 +25,16 @@ module.exports = (req, res) => {
                     result += '</div>';
 
                     res.writeHead(200, {
-                        'Content-Type':'text/html'
+                        'Content-Type': 'text/html'
                     });
-                    data = data.toString().replace('{{content}}',result);
+                    data = data.toString().replace('{{content}}', result);
                     res.write(data);
                     res.end();
                 });
-            }else {
-                // fs.readFile(path.join(__dirname, '../views/details.html'), (err, data) => {
-                //     if(err){
-                //         console.log(err);
-                //         return;
-                //     }
-
-                //     let message = '<h2>The movie is not found</h2>';
-                    
-                //     res.writeHead(200,{
-                //         'Content-Type':'text/html'
-                //     });
-                //     data = data.toString().replace('{{content}}',message);
-                //     res.write(data);
-                //     res.end();
-                // });
             }
         }
+    }
+    else {
+        return true;
     }
 };
