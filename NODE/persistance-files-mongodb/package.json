@@ -1,0 +1,18 @@
+{
+  "name": "shop-lab",
+  "version": "1.0.0",
+  "description": "implementing shopLab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shopLab",
+    "implementation"
+  ],
+  "author": "Ivaylo",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "5.4.6"
+  }
+}

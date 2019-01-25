@@ -11,6 +11,7 @@ module.exports = (req,res) => {
                 console.log(err);
                 return;
             }
+            
 
             let result = '';
             result += '<ul>';
@@ -30,4 +31,4 @@ module.exports = (req,res) => {
 
         });
     }
-}
+};

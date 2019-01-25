@@ -4,7 +4,7 @@ let db = require('../config/dataBase');
 
 
 module.exports = (req, res) => {
-    if (req.path === '/status' && req.method === 'GET') {
+    if (req.headers.statusheader === 'Full') {
         let fileToLoad = path.join(__dirname, '../views/status.html');
         fs.readFile(fileToLoad, (err, data) => {
             if (err) {
