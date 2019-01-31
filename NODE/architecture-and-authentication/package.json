@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "users authetication creation routes",
   "main": "index.js",
+  "engines": {
+    "node": "9.1.0",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ivaylo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "5.4.8"
+  }
 }
