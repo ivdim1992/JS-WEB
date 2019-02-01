@@ -18,3 +18,7 @@ a {
     text-decoration: none;
 }
 
+form input {
+    margin: 0 0 1rem 1rem;
+    
+}

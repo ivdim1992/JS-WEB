@@ -12,13 +12,14 @@ let userSchema = new mongoose.Schema({
 });
 
 userSchema.method({
-    authenticate: (password) => {
+    authenticate: function(password) {
         return encryption.generateHashedPassword(this.salt,password) === this.hashedPass;
     }
 });
 
 let User = mongoose.model('User',userSchema);
 module.exports = User;
+
 module.exports.seedAdminUser = () => {
     User.find({}).then((users) => {
         if(users.length > 0){
