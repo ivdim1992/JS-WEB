@@ -1,25 +1,12 @@
-const express = require('express');
-const port = 5000;
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-
 let env = process.env.NODE_ENV || 'development';
+let settings = require('./server/config/settings')[env];
 
-
+const express = require('express');
 let app = express();
 
-app.get('/', (req, res) => {
+require('./server/config/dabase')(settings);
+require('./server/config/express')(app);
+require('./server/config/routes')(app);
 
-    mongoose
-        .connect('mongodb://localhost:27017/architechtureTemplate')
-        .then(() => {
-            console.log('MongoDb ready');
-            res.send('Hello frmo EXpresSnod');
-        });
-            
-   
-
-});
-
-app.listen(port, () => console.log(`App listening on port ${port}`));
+app.listen(settings.port, () => console.log(`App listening on port ${settings.port}`));
 
